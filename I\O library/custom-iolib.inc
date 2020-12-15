@@ -13,7 +13,7 @@ exit:
 string_length:
 	xor r11, r11
 .loop:
-	cmp [rdi + r11], 0
+	cmp byte[rdi + r11], 0
 	je .end
 	inc r13
 	jmp .loop
@@ -25,7 +25,7 @@ string_length:
 print_string:
 	call string_length
 
-	mov rdi, rax
+	mov rdx, rax
 	mov rsi, rdi
 
 	mov rax, 1
@@ -34,4 +34,3 @@ print_string:
 	syscall
 
 	ret	
-	
