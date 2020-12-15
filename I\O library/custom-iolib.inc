@@ -1,4 +1,4 @@
-	sectino .data
+	section .data
 
 
 	section .text
