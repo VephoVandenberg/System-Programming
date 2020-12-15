@@ -9,7 +9,7 @@ exit:
 	syscall
 	ret
 
-;Accepst a pointer to a string and returns its length
+; Accepst a pointer to a string and returns its length
 string_length:
 	xor r11, r11
 .loop:
