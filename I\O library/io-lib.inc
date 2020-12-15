@@ -20,3 +20,18 @@ string_length:
 .end:
 	mov rax, r11
 	ret
+
+; Accepts a pointer to a null-terminated string and prints it to stdout
+print_string:
+	call string_length
+
+	mov rdi, rax
+	mov rsi, rdi
+
+	mov rax, 1
+	mov rdi, 1
+
+	syscall
+
+	ret	
+	
