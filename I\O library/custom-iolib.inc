@@ -1,5 +1,5 @@
 	section .data
-
+new_line:	db 0xa
 
 	section .text
 
@@ -45,4 +45,10 @@ print_char:
 
 	syscall
 
+	ret
+	
+; Prints a character with code 0xa	
+print_newline:
+	mov rdi, new_line
+	call print_char
 	ret
