@@ -35,8 +35,6 @@ print_string:
 
 	ret	
 	
-	
-	
 ; Accepts a character code directly as its first argument and prints it to stdout 	
 print_char:
 	mov rsi, rdi
