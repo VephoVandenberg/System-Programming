@@ -52,3 +52,27 @@ print_newline:
 	mov rdi, new_line
 	call print_char
 	ret
+
+; Prints unsigned integer
+print_uint:
+    xor rax, rax
+    mov r8, 10
+    mov r9, rsp
+    mov rax, rdi
+    dec rsp
+    mov byte[rsp], 0
+parse_loop:
+    dec rsp
+    xor rdx, rdx
+    div r8 
+    add rdx, '0'
+    mov byte[rsp], dl
+    test rax, rax
+    jnz parse_loop
+
+    mov rdi, rsp
+    call print_string
+
+    mov rsp, r9   
+    ret
+
